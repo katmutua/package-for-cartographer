@@ -25,4 +25,7 @@ cartographer:
 
 conventions:
   #@schema/type any=True
-  resources: {}
+  limits_cpu: ""
+  limits_memory: ""
+  requests_cpu: ""
+  requests_memory: ""

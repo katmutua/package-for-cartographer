@@ -49,4 +49,10 @@ spec:
       #@overlay/match by="name"
       - name: manager
         #@overlay/match missing_ok=True
-        resources: #@ data.values.conventions.resources
+        resources: 
+          limits: 
+            cpu: #@ data.values.conventions.limits_cpu 
+            memory: #@ data.values.conventions.limits_memory
+          requests: 
+            cpu: #@ data.values.conventions.requests_cpu 
+            memory: #@ data.values.conventions.requests_memory

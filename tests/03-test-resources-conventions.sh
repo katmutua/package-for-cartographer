@@ -71,7 +71,7 @@ EOM
 
         actual=$(
                 _apply_ytt \
-                        --data-value-yaml "conventions.resources.limits.memory=99Gi"
+                        --data-value-yaml "conventions.limits_memory=99Gi"
         )
         _assert_files_equal $expected $actual
 }
@@ -95,8 +95,8 @@ EOM
 
         actual=$(
                 _apply_ytt \
-                        --data-value-yaml "conventions.resources.requests.cpu=99" \
-                        --data-value-yaml "conventions.resources.requests.memory=99Gi"
+                        --data-value-yaml "conventions.limits_cpu=99" \
+                        --data-value-yaml "conventions.limits_memory=99Gi"
         )
         _assert_files_equal $expected $actual
 }
@@ -109,7 +109,7 @@ test_requests_set_with_component_excluded() {
 
         actual=$(
                 _apply_ytt \
-                        --data-value-yaml "conventions.resources.limits.memory=99Gi" \
+                        --data-value-yaml "conventions.limits_memory=99Gi" \
                         --data-value-yaml "excluded_components=['conventions']"
         )
 
